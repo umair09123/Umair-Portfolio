@@ -334,6 +334,18 @@ section { padding: clamp(3rem, 7vw, 5.5rem) 0; position: relative; }
 .tool-chip:hover { border-color: rgba(46,230,166,0.35); transform: translateY(-2px); }
 .tool-chip .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--lime); }
 
+.tools-grid { display: flex; flex-wrap: wrap; gap: 1rem; }
+.tool-card {
+  display: flex; align-items: center; gap: 0.85rem;
+  background: var(--panel-soft); border: 1px solid var(--line); border-radius: 14px;
+  padding: 0.9rem 1.3rem 0.9rem 0.9rem;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+.tool-card:hover { transform: translateY(-4px); border-color: rgba(46,230,166,0.3); box-shadow: 0 20px 40px -22px rgba(0,0,0,0.6); }
+.tool-icon { width: 40px; height: 40px; border-radius: 11px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.tool-icon svg { width: 19px; height: 19px; stroke: currentColor; fill: none; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.tool-card span.label-text { font-family: var(--font-mono); font-size: 0.85rem; color: var(--text); }
+
 /* -------- Project / browser mockup -------- */
 .project-card {
   border: 1px solid var(--line); border-radius: 18px; overflow: hidden;
@@ -571,14 +583,49 @@ section { padding: clamp(3rem, 7vw, 5.5rem) 0; position: relative; }
       </div>
       <a href="skills.html" class="btn btn-ghost">See all skills →</a>
     </div>
-    <div class="tools-row reveal-group">
-      <span class="tool-chip reveal"><span class="dot"></span>On-Page SEO</span>
-      <span class="tool-chip reveal"><span class="dot"></span>Off-Page SEO</span>
-      <span class="tool-chip reveal"><span class="dot"></span>Content Optimization</span>
-      <span class="tool-chip reveal"><span class="dot"></span>Technical SEO</span>
-      <span class="tool-chip reveal"><span class="dot"></span>Answer Engine Optimization</span>
-      <span class="tool-chip reveal"><span class="dot"></span>Generative Engine Optimization</span>
-      <span class="tool-chip reveal"><span class="dot"></span>Market Research</span>
+    <div class="tools-grid reveal-group">
+      <div class="tool-card reveal tilt">
+        <div class="tool-icon" style="background:rgba(46,230,166,0.15); color:var(--lime);">
+          <svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><line x1="15.3" y1="15.3" x2="21" y2="21"/></svg>
+        </div>
+        <span class="label-text">On-Page SEO</span>
+      </div>
+      <div class="tool-card reveal tilt">
+        <div class="tool-icon" style="background:rgba(46,230,166,0.15); color:var(--lime);">
+          <svg viewBox="0 0 24 24"><path d="M9 15l6-6"/><path d="M8 12L5.5 14.5a3.5 3.5 0 0 0 5 5L13 17"/><path d="M16 12l2.5-2.5a3.5 3.5 0 0 0-5-5L11 7"/></svg>
+        </div>
+        <span class="label-text">Off-Page SEO</span>
+      </div>
+      <div class="tool-card reveal tilt">
+        <div class="tool-icon" style="background:rgba(46,230,166,0.15); color:var(--lime);">
+          <svg viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2"/><line x1="8.5" y1="8" x2="15.5" y2="8"/><line x1="8.5" y1="12" x2="15.5" y2="12"/><line x1="8.5" y1="16" x2="12.5" y2="16"/></svg>
+        </div>
+        <span class="label-text">Content Optimization</span>
+      </div>
+      <div class="tool-card reveal tilt">
+        <div class="tool-icon" style="background:rgba(46,230,166,0.15); color:var(--lime);">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+        </div>
+        <span class="label-text">Technical SEO</span>
+      </div>
+      <div class="tool-card reveal tilt">
+        <div class="tool-icon" style="background:rgba(110,140,255,0.15); color:var(--link);">
+          <svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/><line x1="12" y1="8" x2="12" y2="12.5"/><circle cx="12" cy="15.3" r="0.4"/></svg>
+        </div>
+        <span class="label-text">Answer Engine Optimization</span>
+      </div>
+      <div class="tool-card reveal tilt">
+        <div class="tool-icon" style="background:rgba(110,140,255,0.15); color:var(--link);">
+          <svg viewBox="0 0 24 24"><path d="M12 3l1.8 4.8L18.6 9.6l-4.8 1.8L12 16.2l-1.8-4.8L5.4 9.6l4.8-1.8L12 3z"/><path d="M19 15l.7 1.8 1.8.7-1.8.7L19 20l-.7-1.8-1.8-.7 1.8-.7L19 15z"/></svg>
+        </div>
+        <span class="label-text">Generative Engine Optimization</span>
+      </div>
+      <div class="tool-card reveal tilt">
+        <div class="tool-icon" style="background:rgba(255,155,92,0.15); color:var(--warm);">
+          <svg viewBox="0 0 24 24"><line x1="5" y1="21" x2="5" y2="11"/><line x1="12" y1="21" x2="12" y2="6"/><line x1="19" y1="21" x2="19" y2="14"/></svg>
+        </div>
+        <span class="label-text">Market Research</span>
+      </div>
     </div>
   </div>
 </section>
